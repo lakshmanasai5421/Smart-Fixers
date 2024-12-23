@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLOT BOOKING</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.nav a:hover {
+  background-color: #0056b3;
+  border-radius: 5px;
+}
+        #booking {
+  background-color: #ecf0f1;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#booking h2 {
+  font-size: 28px;
+  color: #2980b9;
+}
+
+#booking-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#booking-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#booking-form input, #booking-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#booking-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#booking-form button:hover {
+  background-color: #1abc9c;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.search-container {
+    position: relative;
+    width: 300px;
+}
+
+#searchBar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.suggestions-box {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">SERVICE BOOKING SLOT</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="driverbooking.html">Book a Driver</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<section id="booking">
+  <h2>Book a Slot</h2>
+  <form id="booking-form">
+      <label for="vehicle-type">Select Vehicle Type:</label>
+      <select id="vehicle-type" required>
+          <option value="car">Select </option>
+          <option value="car">Car</option>
+          <option value="bike">Bike</option>
+      </select>
+      <div>
+        <label for="vehicle-number">enter vehicle number:</label>
+        <input type="text" id="vehicle-number" name="vehicle-number" placeholder="e.g., AB123CD">
+     </div>
+      <label for="Select Services">Select Service:</label>
+       <select id="brand-select" name="brand">
+        <option value="">--Select Services --</option>
+        <option value="Battery replacement">Battery replacement</option>
+        <option value="Fuel change">Fuel change</option>
+        <option value="Starting problem">Starting problem</option>
+        <option value="Tyer repair">Tyer repair</option>
+        <option value="2w general services">2W general services</option>
+        <option value="Air filter cleaning / replacement">Air filter cleaning / replacement</option>
+        <option value="key-unlock-assistance">key-unlock-assistance</option>
+        <option value="Multimedia system installation ">Multimedia system installation</option>
+        <option value="Towing ">Towing</option>
+    </select>
+
+      <label for="location">Enter Your Location:</label>
+      <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search for location..." oninput="showSuggestions()">
+        <div id="suggestions" class="suggestions-box"></div>
+    </div>
+    <script>
+        const locations = [
+    'Visakhapatnam, Andhra Pradesh, India',
+    'Vijayawada, Andhra Pradesh, India',
+    'Guntur, Andhra Pradesh, India',
+    'Nellore, Andhra Pradesh, India',
+    'Kakinada, Andhra Pradesh, India',
+    'Tirupati, Andhra Pradesh, India',
+    'Rajahmundry, Andhra Pradesh, India',
+    'Chittoor, Andhra Pradesh, India',
+    'Kadapa, Andhra Pradesh, India',
+    'Gudivada ,Andhra Pradesh, India ' ,
+    'Eluru, Andhra Pradesh, India',
+    'Anantapur, Andhra Pradesh, India',
+    'Ongole, Andhra Pradesh, India',
+    'Srikakulam, Andhra Pradesh, India',
+    'Narsapur, Andhra Pradesh, India',
+    'Tanuku, Andhra Pradesh, India',
+    'Peddaganjam, Andhra Pradesh, India',
+    'Guntur Rural, Andhra Pradesh, India',
+    'Mangalagiri, Andhra Pradesh, India',
+    'Amalapuram, Andhra Pradesh, India',
+    'Machilipatnam, Andhra Pradesh, India',
+    'Tadepalligudem, Andhra Pradesh, India',
+    'Bapatla, Andhra Pradesh, India',
+    'Kothagudem, Andhra Pradesh, India',
+    'Yemmiganur, Andhra Pradesh, India',
+    'Jammalamadugu, Andhra Pradesh, India',
+    'Proddatur, Andhra Pradesh, India',
+    'Chilakaluripet, Andhra Pradesh, India',
+    'Giddalur, Andhra Pradesh, India',
+    'Madanapalle, Andhra Pradesh, India',
+    'Puttur, Andhra Pradesh, India',
+    'Sathenapalle, Andhra Pradesh, India',
+    'Kakinada Port, Andhra Pradesh, India',
+    'Maddur, Andhra Pradesh, India',
+    'Kothapeta, Andhra Pradesh, India',
+    'Peddaganjam, Andhra Pradesh, India'
+    ];
+function showSuggestions() {
+    const input = document.getElementById('searchBar').value.toLowerCase();
+const suggestionsBox = document.getElementById('suggestions');
+suggestionsBox.innerHTML = '';
+
+if (input) {
+const filteredLocations = locations.filter(location => location.toLowerCase().includes(input));
+
+if (filteredLocations.length > 0) {
+suggestionsBox.style.display = 'block';
+filteredLocations.forEach(location => {
+const div = document.createElement('div');
+div.classList.add('suggestion-item');
+div.textContent = location;
+div.onclick = () => selectLocation(location);
+suggestionsBox.appendChild(div);
+});
+} else {
+suggestionsBox.style.display = 'none';
+}
+} else {
+suggestionsBox.style.display = 'none';
+}
+}
+
+function selectLocation(location) {
+document.getElementById('searchBar').value = location;
+document.getElementById('suggestions').style.display = 'none';
+}
+
+</script>
+
+      <button type="submit">Book Now</button>
+  </form>
+  <p id="confirmation" style="display:none;">Booking confirmed! We'll be there within 10 minutes.</p>
+</section>
+<footer>
+  <p>&copy; 2024 SMART FIXERS | Fast and Reliable</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

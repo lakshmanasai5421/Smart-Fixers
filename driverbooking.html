@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Booking</title>
+    
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.nav a:hover {
+  background-color: #0056b3;
+  border-radius: 5px;
+}
+
+/* Booking Section */
+.booking-section {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.booking-section h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.book-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.book-btn:hover {
+  background-color: #0056b3;
+}
+
+.back-to-home {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.back-to-home:hover {
+  color: #0056b3;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Driver Booking</div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="driverbooking.html">Book a Driver</a></li>
+                    <li><a href="bookslot.html">Book slot</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contactus.html">Contact US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="booking-section">
+        <div class="container">
+            <h1>Book a Driver</h1>
+            <form class="driverbooking-form">
+                <div class="form-group">
+                    <label for="vehicle-type">Vehicle Type:</label>
+                    <select id="vehicle-type" name="vehicle-type" required>
+                        <option vlaue="Select">Select</option>
+                        <option value="car">Car</option>
+                        <option value="bike">Bike</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Select from Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <label for="date">Select to Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time-slot">Select Time Slot:</label>
+                    <select id="time-slot" name="time-slot" required>
+                        <option valu="Select">Select</option>
+                        <option value="morning">Morning</option>
+                        <option value="afternoon">Afternoon</option>
+                        <option value="evening">Evening</option>
+                        <option value="full-day">Full Day</option>
+                    </select>
+                </div>
+                        <div>
+                            <label for="Select brand">Select brand:</label>
+                                <select id="brand-select" name="brand">
+                                    <option value="">--Select Brand--</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="ford">Ford</option>
+                                    <option value="honda">Honda</option>
+                                    <option value="harley">Harley-Davidson</option>
+                                    <option value="yamaha">Yamaha</option>
+                                    <option value="ducati">Ducati</option>
+                                </select>
+                            </div>
+                <div class="form-group">
+                    <label for="duration">Booking Duration:</label>
+                    <select id="duration" name="duration" required>
+                        <option value="Select">Select</option>
+                        <option value="one-day">One Day</option>
+                        <option value="multiple-days">Multiple Days</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <button type="submit" class="book-btn">Book Now</button>
+            </form>
+            <p id="confirmation" style="display:none;">Booking confirmed!.</p>
+            <a href="index.html" class="back-to-home">Back to Home</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 SMART FIXERS | Fast and Reliable</p>
+        <div class="container">
+        </div>
+    </footer>
+ 
+</body>
+</html>
+
+

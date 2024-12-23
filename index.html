@@ -1,0 +1,251 @@
+<html lang="en">
+            <head>
+                <meta name="viewport" content="with=device-width,initial-scale=1.0">
+                <title>SMART FIXERS WEBSITE</title>
+                <link rel="stylesheet" href="style.css">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+            </head>
+            <body>
+                <section class="header">
+                    <nav>
+                            <h2 class="logo">SMART FIXERS</h2>
+                        <div class="nav-links">
+                            <!-- <i class="fa fa-times" onclick="hideMenu()"></i> -->
+                            <ul>
+                                    <li><a href="index.html">HOME</a></li>
+                                    <li><a href="aboutus.html">ABOUTUS</a></li>
+                                    <li><a href="services.html">SERVICES</a></li>
+                                    <li><a href="bookslot.html">BOOK SLOT</a></li>
+                                    <li><a href="driverbooking.html">DRIVER BOOKING</a></li>
+                                    <li><a href="contactus.html">CONTACT US</a></li>
+                            </ul>
+                          </div>
+                          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                          <div id="id01" class="modal">
+                            <form class="modal-content animate" action="/action_page.php" method="post">
+                            <div class="imgcontainer">
+                              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                              <img src="image/avatar2.jpg" alt="Avatar" class="avatar">
+                            </div>
+                            <div class="container">
+                              <label for="uname"><b>Username</b></label>
+                              <input type="text" placeholder="Enter Username" name="uname" required>
+
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+                                      
+                                    <button type="submit">Login</button>
+                                    <label>
+                                      <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                                  </div>
+
+                                  <div class="container" style="background-color:#f1f1f1">
+                                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                    <span class="psw">Forgot <a href="#">password?</a></span>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <script>
+                              // Get the modal
+                              var modal = document.getElementById('id01');
+
+                              // When the user clicks anywhere outside of the modal, close it
+                              window.onclick = function(event) {
+                                  if (event.target == modal) {
+                                      modal.style.display = "none";
+                                  }
+                              }
+                              </script>  
+                    </nav>
+                    <div class="text-box">
+                <p><h3>SMART FIXERS -A SERVICE SOLUTION </h3><br>
+                  "Wherever you are, we're just minutes away from getting you back on the road"<br>
+                </p>
+                <a href="learnmore.html" class="hero-btn">Learn more</a>
+            </div>
+        </section>
+        <section class="Brands">
+            <h1>How do we do it?</h1>
+            <p>Experience convenience with our bike and car minor repair service! Our skilled technicians arrive equipped with the necessary tools and expertise 
+                to swiftly address minor issues with your vehicle on the spot, ensuring your vehicle stays in optimal condition for your journey ahead.</p>
+            <div class="row">
+                <div class="Brands-col">
+                    <h3>01</h3>
+                    <P>Diagnose the vehicle throughly to narrow down the problem</P>
+                </div>
+                <div class="Brands-col">
+                    <h3>02</h3>
+                    <P>Fix the problem with right solution for spot mobilisation </P>
+                </div>
+                <div class="Brands-col">
+                    <h3>03</h3>
+                    <P> Recheck the vehicle for any other warning & issues</P>
+                </div>
+                </div>
+                <div class="row2">
+                    <div class="Brands-col">
+                    <h3>04</h3>
+                    <P> Provide maintenance tips & recommendations We accept payment through online, payTM, UPI etc</P>
+                </div>
+                <div class="Brands-col">
+                    <h3>05</h3>
+                    <P>We accept payment through online, payTM, UPI etc</P>
+                </div>
+                <div class="Brands-col">
+                    <h3>06</h3>
+                    <P>safe and secure , a trusted </P>
+                </div>
+            </div>
+                </section>
+                <section id="how-it-works">
+                  <h2>How It Works</h2>
+                  <p>Book a slot and our team will reach your location within 10 minutes to fix your vehicle.</p>
+                  <div class="steps">
+                      <div class="step">
+                          <h3>1. Choose Your Vehicle</h3>
+                          <p>Select whether you need repair for a car or bike.</p>
+                      </div>
+                      <div class="step">
+                          <h3>2. Book a Slot</h3>
+                          <p>Enter your location and book a slot. We’ll be there in 10 minutes.</p>
+                      </div>
+                      <div class="step">
+                          <h3>3. Get It Fixed</h3>
+                          <p>Our expert mechanics will fix your vehicle on the spot.</p>
+                      </div>
+                  </div>
+              </section>
+          
+              <section id="booking">
+                  <h2>Book a Slot</h2>
+                  <form id="booking-form">
+                      <label for="vehicle-type">Select Vehicle Type:</label>
+                      <select id="vehicle-type" required>
+                          <option value="select">Select</option>
+                          <option value="car">Car</option>
+                          <option value="bike">Bike</option>
+                      </select>
+                      <div>
+                        <label for="vehicle-number">enter vehicle number:</label>
+                        <input type="text" id="vehicle-number" name="vehicle-number" placeholder="e.g., AB123CD">
+                     </div>
+                      <label for="Select Services">Select Service:</label>
+                       <select id="brand-select" name="brand">
+                        <option value="">--Select Services --</option>
+                        <option value="Battery replacement">Battery replacement</option>
+                        <option value="Fuel change">Fuel change</option>
+                        <option value="Starting problem">Starting problem</option>
+                        <option value="Tyer repair">Tyer repair</option>
+                        <option value="2w general services">2W general services</option>
+                        <option value="Air filter cleaning / replacement">Air filter cleaning / replacement</option>
+                        <option value="key-unlock-assistance">key-unlock-assistance</option>
+                        <option value="Multimedia system installation ">Multimedia system installation</option>
+                        <option value="Towing ">Towing</option>
+                    </select>
+          
+                      <label for="location">Enter Your Location:</label>
+                      <div class="search-container">
+                        <input type="text" id="searchBar" placeholder="Search for location..." oninput="showSuggestions()">
+                        <div id="suggestions" class="suggestions-box"></div>
+                    </div>
+                    <script>
+                        const locations = [
+                    'Visakhapatnam, Andhra Pradesh, India',
+                    'Vijayawada, Andhra Pradesh, India',
+                    'Bheemvaram , Andhra Pradesh , India',
+                    'Bantumilli , Andhra Pradesh , India',
+                    'Pedana , Andhra pradesh , India ',
+                    'Moturu , Andhra Prasesh , India ',
+                    'Mudinepalli , Andhra Pradesh , India ',
+                    'Guntur, Andhra Pradesh, India',
+                    'Ramanapaddu , Andhra Pradesh , India ',
+                    'Lingala , Andhra Pradesh , India ',
+                    'Uppuluru , Andhra Pradesh , India ',
+                    'Uyyuru , Andhra Pradesh , India ',
+                    'Junction , Andhra Pradesh , India ',
+                    'Indupalli , Andra Pradesh , India ',
+                    'Madhuranagar , Andhra Pradesh , India ',
+                    'Nellore, Andhra Pradesh, India',
+                    'Kakinada, Andhra Pradesh, India',
+                    'Tirupati, Andhra Pradesh, India',
+                    'Rajahmundry, Andhra Pradesh, India',
+                    'Chittoor, Andhra Pradesh, India',
+                    'Kadapa, Andhra Pradesh, India',
+                    'Gudivada ,Andhra Pradesh, India ' ,
+                    'Eluru, Andhra Pradesh, India',
+                    'Anantapur, Andhra Pradesh, India',
+                    'Ongole, Andhra Pradesh, India',
+                    'Srikakulam, Andhra Pradesh, India',
+                    'Narsapur, Andhra Pradesh, India',
+                    'Tanuku, Andhra Pradesh, India',
+                    'Peddaganjam, Andhra Pradesh, India',
+                    'Guntur Rural, Andhra Pradesh, India',
+                    'Mangalagiri, Andhra Pradesh, India',
+                    'Amalapuram, Andhra Pradesh, India',
+                    'Machilipatnam, Andhra Pradesh, India',
+                    'Tadepalligudem, Andhra Pradesh, India',
+                    'Bapatla, Andhra Pradesh, India',
+                    'Kothagudem, Andhra Pradesh, India',
+                    'Yemmiganur, Andhra Pradesh, India',
+                    'Jammalamadugu, Andhra Pradesh, India',
+                    'Proddatur, Andhra Pradesh, India',
+                    'Chilakaluripet, Andhra Pradesh, India',
+                    'Giddalur, Andhra Pradesh, India',
+                    'Madanapalle, Andhra Pradesh, India',
+                    'Puttur, Andhra Pradesh, India',
+                    'Sathenapalle, Andhra Pradesh, India',
+                    'Kakinada Port, Andhra Pradesh, India',
+                    'Maddur, Andhra Pradesh, India',
+                    'Kothapeta, Andhra Pradesh, India',
+                    'Peddaganjam, Andhra Pradesh, India'
+                    ];
+                function showSuggestions() {
+                    const input = document.getElementById('searchBar').value.toLowerCase();
+    const suggestionsBox = document.getElementById('suggestions');
+    suggestionsBox.innerHTML = '';
+    
+    if (input) {
+        const filteredLocations = locations.filter(location => location.toLowerCase().includes(input));
+        
+        if (filteredLocations.length > 0) {
+            suggestionsBox.style.display = 'block';
+            filteredLocations.forEach(location => {
+                const div = document.createElement('div');
+                div.classList.add('suggestion-item');
+                div.textContent = location;
+                div.onclick = () => selectLocation(location);
+                suggestionsBox.appendChild(div);
+            });
+        } else {
+            suggestionsBox.style.display = 'none';
+        }
+    } else {
+        suggestionsBox.style.display = 'none';
+    }
+}
+
+function selectLocation(location) {
+    document.getElementById('searchBar').value = location;
+    document.getElementById('suggestions').style.display = 'none';
+}
+
+    </script>
+
+                
+                      <button type="submit">Book Now</button>
+                  </form>
+                  <p id="confirmation" style="display:none;">Booking confirmed! We'll be there within 10 minutes.</p>
+              </section>
+              <footer>
+                  <p>&copy; 2024 SMART FIXERS | Fast and Reliable</p>
+              </footer>
+          
+              <script src="script.js"></script>
+              
+            </body>   
+</html>
